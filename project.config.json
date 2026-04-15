@@ -1,0 +1,27 @@
+{
+  "description": "微信小程序项目根配置（指向 demos/02.app-json）",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "enhance": true,
+    "urlCheck": true,
+    "minifyWXML": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.15.2",
+  "appid": "wx93cda3dffb0c79a1",
+  "projectname": "wechat-miniprogram-demos",
+  "miniprogramRoot": "demos/02.app-json/",
+  "srcMiniprogramRoot": "demos/02.app-json/",
+  "condition": {
+    "miniprogram": {
+      "current": -1,
+      "list": []
+    }
+  }
+}
