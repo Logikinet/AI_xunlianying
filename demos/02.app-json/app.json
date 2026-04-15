@@ -1,10 +1,8 @@
 {
-  "pages": [
-    "pages/home/home"
-  ],
+  "pages": ["pages/home/home"],
   "window": {
     "navigationBarBackgroundColor": "#ff0000",
-    "navigationBarTitleText": "小程序 Demo",
+    "navigationBarTitleText": "校园活动报名助手",
     "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json"
