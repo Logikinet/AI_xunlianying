@@ -1,0 +1,81 @@
+<view style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px;">
+  <!-- 活动标题 -->
+  <view wx:if="{{activity}}" style="background: white; border-radius: 12px; padding: 16px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <text style="font-size: 16px; color: #333; font-weight: bold;">{{activity.name}}</text>
+  </view>
+
+  <!-- 表单容器 -->
+  <view style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <!-- 标题 -->
+    <view style="font-size: 20px; color: #333; font-weight: bold; margin-bottom: 24px; text-align: center;">
+      <text>报名表单</text>
+    </view>
+
+    <!-- 姓名 -->
+    <view style="margin-bottom: 20px;">
+      <label style="display: block; font-size: 14px; color: #333; font-weight: bold; margin-bottom: 8px;">姓名 <text style="color: #ff0000;">*</text></label>
+      <input 
+        placeholder="请输入你的姓名" 
+        placeholder-style="color: #ccc"
+        value="{{form.name}}"
+        data-field="name"
+        bindInput="handleInput"
+        style="border: 1px solid #ddd; border-radius: 6px; padding: 10px 12px; font-size: 14px; width: 100%; box-sizing: border-box;"
+      />
+    </view>
+
+    <!-- 专业/年级 -->
+    <view style="margin-bottom: 20px;">
+      <label style="display: block; font-size: 14px; color: #333; font-weight: bold; margin-bottom: 8px;">专业/年级 <text style="color: #ff0000;">*</text></label>
+      <input 
+        placeholder="例如：计算机科学与技术 2023级" 
+        placeholder-style="color: #ccc"
+        value="{{form.major}}"
+        data-field="major"
+        bindInput="handleInput"
+        style="border: 1px solid #ddd; border-radius: 6px; padding: 10px 12px; font-size: 14px; width: 100%; box-sizing: border-box;"
+      />
+    </view>
+
+    <!-- 联系方式 -->
+    <view style="margin-bottom: 20px;">
+      <label style="display: block; font-size: 14px; color: #333; font-weight: bold; margin-bottom: 8px;">联系方式 <text style="color: #ff0000;">*</text></label>
+      <input 
+        placeholder="请输入手机号或邮箱" 
+        placeholder-style="color: #ccc"
+        value="{{form.contact}}"
+        data-field="contact"
+        bindInput="handleInput"
+        type="text"
+        style="border: 1px solid #ddd; border-radius: 6px; padding: 10px 12px; font-size: 14px; width: 100%; box-sizing: border-box;"
+      />
+    </view>
+
+    <!-- 报名理由 -->
+    <view style="margin-bottom: 30px;">
+      <label style="display: block; font-size: 14px; color: #333; font-weight: bold; margin-bottom: 8px;">报名理由 <text style="color: #ff0000;">*</text></label>
+      <textarea 
+        placeholder="请简要说明你为什么想参加这个活动" 
+        placeholder-style="color: #ccc"
+        value="{{form.reason}}"
+        data-field="reason"
+        bindInput="handleInput"
+        style="border: 1px solid #ddd; border-radius: 6px; padding: 10px 12px; font-size: 14px; width: 100%; box-sizing: border-box; min-height: 100px; resize: none;"
+      />
+    </view>
+
+    <!-- 按钮组 -->
+    <view style="display: flex; gap: 12px;">
+      <button 
+        style="flex: 1; background-color: #667eea; color: white; border-radius: 8px; padding: 12px; font-size: 16px; font-weight: bold;" 
+        bindtap="handleSubmit">
+        提交报名
+      </button>
+      <button 
+        style="flex: 1; background-color: #ccc; color: #333; border-radius: 8px; padding: 12px; font-size: 16px; font-weight: bold;" 
+        bindtap="handleBack">
+        返回
+      </button>
+    </view>
+  </view>
+</view>

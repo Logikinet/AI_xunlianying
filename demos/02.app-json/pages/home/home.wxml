@@ -9,11 +9,6 @@
     <text style="font-size: 14px; color: #333; line-height: 1.8;">{{intro}}</text>
   </view>
 
-  <!-- 按钮 -->
-  <view style="text-align: center; margin-bottom: 30px;">
-    <button style="background-color: #FFD700; color: #333; font-weight: bold; border-radius: 8px; padding: 12px 40px; font-size: 16px;">立即查看</button>
-  </view>
-
   <!-- 活动卡片标题 -->
   <view style="color: white; font-size: 20px; font-weight: bold; margin-bottom: 15px;">
     <text>热门活动</text>
@@ -21,7 +16,7 @@
 
   <!-- 活动卡片列表 -->
   <view style="display: flex; flex-direction: column; gap: 15px;">
-    <view wx:for="{{activities}}" wx:key="id" style="background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <view wx:for="{{activities}}" wx:key="id" data-id="{{item.id}}" bindtap="handleActivityTap" style="background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer;">
       <view style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
         <text style="font-size: 16px; color: #333; font-weight: bold; flex: 1;">{{item.name}}</text>
         <view style="background: #667eea; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px;">
@@ -38,8 +33,12 @@
         <text style="margin-right: 8px;">📍</text>
         <text>{{item.location}}</text>
       </view>
+
+      <view style="font-size: 13px; color: #999; margin-bottom: 12px;">
+        <text>{{item.intro}}</text>
+      </view>
       
-      <button style="background-color: #667eea; color: white; width: 100%; border-radius: 6px; padding: 8px; font-size: 14px;">进入报名</button>
+      <button style="background-color: #667eea; color: white; width: 100%; border-radius: 6px; padding: 8px; font-size: 14px; border: none;">进入详情</button>
     </view>
   </view>
 </view>

@@ -1,0 +1,48 @@
+<view style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px;">
+  <view wx:if="{{activity}}" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <!-- 活动名称 -->
+    <view style="margin-bottom: 24px;">
+      <text style="font-size: 24px; color: #333; font-weight: bold;">{{activity.name}}</text>
+    </view>
+
+    <!-- 基本信息 -->
+    <view style="margin-bottom: 20px; padding: 16px; background: #f5f5f5; border-radius: 8px;">
+      <!-- 时间 -->
+      <view style="display: flex; align-items: center; margin-bottom: 12px;">
+        <text style="color: #667eea; font-weight: bold; width: 60px;">🕐 时间</text>
+        <text style="color: #333; flex: 1;">{{activity.time}}</text>
+      </view>
+
+      <!-- 地点 -->
+      <view style="display: flex; align-items: center; margin-bottom: 12px;">
+        <text style="color: #667eea; font-weight: bold; width: 60px;">📍 地点</text>
+        <text style="color: #333; flex: 1;">{{activity.location}}</text>
+      </view>
+
+      <!-- 参加人数 -->
+      <view style="display: flex; align-items: center;">
+        <text style="color: #667eea; font-weight: bold; width: 60px;">👥 人数</text>
+        <text style="color: #333; flex: 1;">{{activity.participants}} 人已报名</text>
+      </view>
+    </view>
+
+    <!-- 简介 -->
+    <view style="margin-bottom: 20px;">
+      <text style="font-size: 14px; color: #666; font-weight: bold; display: block; margin-bottom: 8px;">活动简介</text>
+      <text style="font-size: 14px; color: #999; line-height: 1.8;">{{activity.intro}}</text>
+    </view>
+
+    <!-- 详细介绍 -->
+    <view style="margin-bottom: 30px;">
+      <text style="font-size: 14px; color: #666; font-weight: bold; display: block; margin-bottom: 8px;">活动详情</text>
+      <text style="font-size: 14px; color: #999; line-height: 1.8;">{{activity.detail}}</text>
+    </view>
+
+    <!-- 立即报名按钮 -->
+    <button style="background-color: #667eea; color: white; width: 100%; border-radius: 8px; padding: 14px; font-size: 16px; font-weight: bold;" bindtap="handleSignup">立即报名</button>
+  </view>
+
+  <view wx:else style="text-align: center; padding: 40px 20px; color: white;">
+    <text>活动信息加载中...</text>
+  </view>
+</view>

@@ -1,9 +1,29 @@
 {
-  "pages": ["pages/home/home"],
+  "pages": [
+    "pages/home/home",
+    "pages/activity-detail/activity-detail",
+    "pages/signup/signup",
+    "pages/my-signups/my-signups"
+  ],
   "window": {
-    "navigationBarBackgroundColor": "#ff0000",
+    "navigationBarBackgroundColor": "#667eea",
     "navigationBarTitleText": "校园活动报名助手",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#667eea",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "活动列表"
+      },
+      {
+        "pagePath": "pages/my-signups/my-signups",
+        "text": "我的报名"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

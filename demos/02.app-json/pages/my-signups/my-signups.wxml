@@ -1,0 +1,74 @@
+<view style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px;">
+  <!-- 标题 -->
+  <view style="text-align: center; margin-bottom: 30px; margin-top: 20px;">
+    <text style="font-size: 24px; color: white; font-weight: bold;">我的报名</text>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:if="{{isEmpty}}" style="text-align: center; padding: 60px 20px;">
+    <text style="font-size: 48px; margin-bottom: 20px;">📋</text>
+    <text style="display: block; font-size: 16px; color: white; margin-bottom: 10px;">暂无报名记录</text>
+    <text style="display: block; font-size: 14px; color: rgba(255,255,255,0.8);">去活动列表报名吧</text>
+  </view>
+
+  <!-- 报名列表 -->
+  <view wx:else style="display: flex; flex-direction: column; gap: 15px;">
+    <view wx:for="{{signups}}" wx:key="id" style="background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <!-- 活动名称 -->
+      <view style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+        <text style="font-size: 16px; color: #333; font-weight: bold; flex: 1;">{{item.activityName}}</text>
+        <view style="background: #FFD700; color: #333; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-left: 10px;">
+          <text>已报名</text>
+        </view>
+      </view>
+
+      <!-- 报名者信息 -->
+      <view style="background: #f5f5f5; border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+        <!-- 姓名 -->
+        <view style="font-size: 13px; color: #666; margin-bottom: 8px; display: flex;">
+          <text style="font-weight: bold; width: 60px;">姓名：</text>
+          <text style="flex: 1;">{{item.name}}</text>
+        </view>
+
+        <!-- 专业 -->
+        <view style="font-size: 13px; color: #666; margin-bottom: 8px; display: flex;">
+          <text style="font-weight: bold; width: 60px;">专业：</text>
+          <text style="flex: 1;">{{item.major}}</text>
+        </view>
+
+        <!-- 联系方式 -->
+        <view style="font-size: 13px; color: #666; margin-bottom: 8px; display: flex;">
+          <text style="font-weight: bold; width: 60px;">联系：</text>
+          <text style="flex: 1;">{{item.contact}}</text>
+        </view>
+
+        <!-- 报名理由 -->
+        <view style="font-size: 13px; color: #666; margin-bottom: 0;">
+          <text style="font-weight: bold; display: block; margin-bottom: 4px;">报名理由：</text>
+          <text style="line-height: 1.6;">{{item.reason}}</text>
+        </view>
+      </view>
+
+      <!-- 报名时间 -->
+      <view style="font-size: 12px; color: #999; margin-bottom: 12px; text-align: right;">
+        {{item.signupTime}}
+      </view>
+
+      <!-- 操作按钮 -->
+      <view style="display: flex; gap: 10px;">
+        <button 
+          style="flex: 1; background-color: #667eea; color: white; border-radius: 6px; padding: 8px; font-size: 14px;" 
+          data-activity-id="{{item.activityId}}"
+          bindtap="handleView">
+          查看活动
+        </button>
+        <button 
+          style="flex: 1; background-color: #ff6b6b; color: white; border-radius: 6px; padding: 8px; font-size: 14px;" 
+          data-id="{{item.id}}"
+          bindtap="handleDelete">
+          删除记录
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
